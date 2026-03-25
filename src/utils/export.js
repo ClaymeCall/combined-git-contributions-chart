@@ -2,19 +2,28 @@ import { toast } from "react-hot-toast"
 const API_URL = "/api/v1/"
 
 function fetchGithubData(username) {
-  return fetch(API_URL + `github?username=${username}`).then((res) => res.json())
+  return fetch(API_URL + `github?username=${username}`).then((res) =>
+    res.json()
+  )
 }
 
 function fetchBitbucketData(body) {
-  return fetch(API_URL + 'bitbucket', {
-    method: 'POST',
+  return fetch(API_URL + "bitbucket", {
+    method: "POST",
     body: JSON.stringify({ body })
   }).then((res) => res.json())
 }
 
 function fetchGitlabData(body) {
-  return fetch(API_URL + 'gitlab', {
-    method: 'POST',
+  return fetch(API_URL + "gitlab", {
+    method: "POST",
+    body: JSON.stringify({ body })
+  }).then((res) => res.json())
+}
+
+function fetchCodebergData(body) {
+  return fetch(API_URL + "codeberg", {
+    method: "POST",
     body: JSON.stringify({ body })
   }).then((res) => res.json())
 }
@@ -89,13 +98,13 @@ async function copyToClipboard(canvas) {
   }
 }
 
-
 module.exports = {
   fetchGithubData,
   fetchBitbucketData,
   fetchGitlabData,
+  fetchCodebergData,
   download,
   share,
   downloadJSON,
-  copyToClipboard,
+  copyToClipboard
 }
