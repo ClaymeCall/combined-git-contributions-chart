@@ -593,7 +593,7 @@ const App = () => {
         {renderGithubButton()}
         <footer>
           <p>
-            Not affiliated with GitHub, Gitlab, Atlassian, Amazon, or Microsoft
+            Not affiliated with GitHub, Gitlab, Atlassian, Amazon, Codeberg, or Microsoft
           </p>
           {_renderDownloadAsJSON()}
         </footer>
